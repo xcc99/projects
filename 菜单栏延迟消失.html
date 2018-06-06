@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,ul,div,li{
+				margin: 0;
+				padding: 0;
+			}
+			
+			ul li{
+				list-style: none;
+				float: left;
+				
+			}
+			#wrap{
+				width: 400px;
+				height: 100px;
+				border: 1px solid black;
+				margin: 0 auto;
+				position: relative;
+			}
+			#head{
+				text-align: center;
+				margin: 0 auto;
+				width: 360px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 5px;
+				/*border: 1px solid royalblue;*/
+				
+			}
+			#head ul li{ 
+				width: 70px;
+					
+				margin-right:20px ;
+				background-color: royalblue;
+				border-radius: 5px;
+			}
+			#content{
+				position: absolute;
+				
+				
+				
+				top: 45px;
+				left: 10px;
+				
+			}
+			#content .div1{
+				
+				height: 30px;
+				border-radius:5px;
+				border: 1px solid black;
+				display: none;
+			}
+			
+			#content ul li{
+				margin-right: 20px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="head">
+				<ul>
+					<li>首页</li>
+					<li>关于我们</li>
+					<li>博客</li>
+					<li>作品</li>
+				</ul>
+			</div>
+			<div id="content">
+				<div class="div1">
+					
+					<ul>
+						<li>1111111</li>
+						<li>2222222</li>
+						<li>33333333</li>
+						<!--<li>4444444</li>-->
+					</ul>
+				</div>
+				<div class="div1">
+					
+					<ul>
+						<li>444444</li>
+						<li>2222222</li>
+						<li>33333333</li>
+						<!--<li>4444444</li>-->
+					</ul>
+				</div>
+				<div class="div1">
+					
+					<ul>
+						<li>333333</li>
+						<li>2222222</li>
+						<li>33333333</li>
+						<!--<li>4444444</li>-->
+					</ul>
+				</div>
+				<div class="div1">
+					
+					<ul>
+						<li>666666</li>
+						<li>2222222</li>
+						<li>33333333</li>
+						<li>4444444</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var oHead=document.getElementById('head');
+			var aLi1=oHead.getElementsByTagName('li');
+			var oContent=document.getElementById('content');
+			var oDiv1=document.getElementsByClassName('div1');
+			var aLi2=oContent.getElementsByTagName('li');
+			var timer=null;
+			
+			/*for (var i=0;i<aLi1.length;i++) {
+				aLi1[i].onmouseover=show;
+				aLi1[i].onmouseout=hide;
+				oDiv1[i].onmouseover=show;
+				oDiv1[i].onmouseout=hide;
+			
+				function show(){
+					clearInterval(timer);
+						oDiv1[i].style.display='block';
+				};
+				function hide(){
+					timer=setTimeout(function(){
+						oDiv1[i].style.display='none';
+					},300);
+				};
+			};*/
+						function show(index){
+				clearInterval(timer);
+					oDiv1[index].style.display='block';
+			};
+			function hide(index){
+				timer=setTimeout(function(){
+					oDiv1[index].style.display='none';
+				},300);
+			};
+
+			for (var i=0;i<aLi1.length;i++) {
+				aLi1[i].onmouseover=show(i);
+				aLi1[i].onmouseout=hide(i);
+				oDiv1[i].onmouseover=show(i);
+				oDiv1[i].onmouseout=hide(i);
+			
+
+			};
+			
+		</script>
+	</body>
+</html>
